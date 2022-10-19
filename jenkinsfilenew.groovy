@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'SHOPIZER'}
-    triggers { cron '23 7 * * *'}
+    triggers { cron '30 7 * * *'}
     stages{
         stage('vcs') {
             steps {
@@ -11,13 +11,6 @@ pipeline {
         stage('maven') {
             steps {
                 sh 'mvn package'
-            }
-        }
-        stage('mergechanges') {
-            steps {
-                sh """
-                git merge develop --no-ff
-                """
             }
         }
     }
