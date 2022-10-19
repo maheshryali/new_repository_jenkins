@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'SHOPIZER'}
-    triggers { cron '42 7 * * *'}
+    triggers { cron '47 7 * * *'}
     stages{
         stage('vcs') {
             steps {
